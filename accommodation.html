@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover accommodation in Lesotho — luxury hotels, mountain lodges, guesthouses, self-catering, campsites, and traditional cultural stays in the Kingdom in the Sky.">
+  <title>Accommodation | Kingdom in the Sky</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar navbar-expand-lg site-navbar scrolled" id="siteNavbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a class="navbar-brand brand" href="index.html" aria-label="Kingdom in the Sky — Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 28L12 10L20 22L26 14L32 28H4Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+            <circle cx="26" cy="8" r="2.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Kingdom in the Sky</span>
+          <span class="brand-tagline">Discover the Beauty of Lesotho</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+          <li class="nav-item"><a class="nav-link active" href="accommodation.html">Accommodation</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="page-hero accommodation-hero" aria-labelledby="accom-hero-heading">
+      <div class="page-hero-bg" style="background-image: url('assets/images/lodge-hero.jpg');"></div>
+      <div class="page-hero-overlay"></div>
+      <div class="container page-hero-content">
+        <p class="page-hero-kicker">Rest in the Mountains</p>
+        <h1 class="page-hero-title" id="accom-hero-heading">Find Your Perfect Stay</h1>
+        <p class="page-hero-desc">From luxury mountain lodges to traditional Basotho homesteads — discover where to stay in the Kingdom in the Sky.</p>
+        <a href="#accommodation-search" class="btn btn-gold btn-lg">Explore Stays</a>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb-custom">
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Accommodation</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ========== SEARCH ========== -->
+    <section class="section accommodation-search-section" id="accommodation-search" aria-labelledby="search-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Start Your Search</p>
+          <h2 class="section-title" id="search-heading">Plan Your Stay</h2>
+          <p class="section-subtitle">Filter by location, type, dates, and group size. This is a frontend demonstration — no reservations are made.</p>
+        </div>
+
+        <div class="accommodation-search-card reveal">
+          <form id="accommodationSearchForm" class="accommodation-search-form" novalidate>
+            <div class="row g-3">
+
+              <!-- Location -->
+              <div class="col-md-6 col-lg-3">
+                <label for="accLocation" class="form-label">Location</label>
+                <input type="text" class="form-control" id="accLocation" name="accLocation" placeholder="e.g. Maseru, Semonkong">
+              </div>
+
+              <!-- Type -->
+              <div class="col-md-6 col-lg-3">
+                <label for="accType" class="form-label">Accommodation Type</label>
+                <select class="form-select" id="accType" name="accType">
+                  <option value="">Any type</option>
+                  <option value="luxury">Luxury hotel or resort</option>
+                  <option value="lodge">Mountain lodge</option>
+                  <option value="guesthouse">Guesthouse or B&amp;B</option>
+                  <option value="selfcatering">Self-catering</option>
+                  <option value="campsite">Campsite</option>
+                  <option value="cultural">Cultural stay</option>
+                </select>
+              </div>
+
+              <!-- Guests -->
+              <div class="col-md-6 col-lg-2">
+                <label for="accGuests" class="form-label">Guests</label>
+                <input type="number" class="form-control" id="accGuests" name="accGuests" min="1" max="20" value="2" aria-describedby="accGuestsError">
+                <div class="invalid-feedback" id="accGuestsError" role="alert"></div>
+              </div>
+
+              <!-- Check-in -->
+              <div class="col-md-6 col-lg-2">
+                <label for="accCheckin" class="form-label">Check-in</label>
+                <input type="date" class="form-control" id="accCheckin" name="accCheckin" aria-describedby="accCheckinError">
+                <div class="invalid-feedback" id="accCheckinError" role="alert"></div>
+              </div>
+
+              <!-- Check-out -->
+              <div class="col-md-6 col-lg-2">
+                <label for="accCheckout" class="form-label">Check-out</label>
+                <input type="date" class="form-control" id="accCheckout" name="accCheckout" aria-describedby="accCheckoutError">
+                <div class="invalid-feedback" id="accCheckoutError" role="alert"></div>
+              </div>
+
+            </div>
+
+            <div class="accommodation-search-actions">
+              <button type="submit" class="btn btn-gold">
+                <i class="bi bi-search" aria-hidden="true"></i> Search
+              </button>
+              <button type="button" class="btn btn-outline-gold" id="accResetBtn">
+                <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Reset
+              </button>
+              <p class="accommodation-search-note">
+                <i class="bi bi-info-circle" aria-hidden="true"></i>
+                Demonstration only — no availability is checked and no bookings are made.
+              </p>
+            </div>
+
+            <div class="form-feedback" id="accSearchFeedback" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CATEGORIES ========== -->
+    <section class="section section-alt" aria-labelledby="categories-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Accommodation Types</p>
+          <h2 class="section-title" id="categories-heading">Where to Rest Your Head</h2>
+          <p class="section-subtitle">Lesotho offers accommodation to suit every traveller — from luxury lodges to cultural homestays.</p>
+        </div>
+
+        <div class="accommodation-categories-grid">
+          <a href="#featured-stays" class="accommodation-category-card reveal" data-cat-link="luxury">
+            <div class="accommodation-category-icon"><i class="bi bi-building" aria-hidden="true"></i></div>
+            <h3 class="accommodation-category-title">Luxury Hotels &amp; Resorts</h3>
+            <p class="accommodation-category-text">Full-service hotels and resorts in Maseru, Afriski, and the northern highlands — ideal for comfort and convenience.</p>
+            <span class="accommodation-category-link">View stays <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </a>
+
+          <a href="#featured-stays" class="accommodation-category-card reveal" data-cat-link="lodge">
+            <div class="accommodation-category-icon"><i class="bi bi-house-door" aria-hidden="true"></i></div>
+            <h3 class="accommodation-category-title">Mountain Lodges</h3>
+            <p class="accommodation-category-text">Rustic retreats and highland lodges, often at altitude — perfect for hikers, photographers, and quiet escapes.</p>
+            <span class="accommodation-category-link">View stays <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </a>
+
+          <a href="#featured-stays" class="accommodation-category-card reveal" data-cat-link="guesthouse">
+            <div class="accommodation-category-icon"><i class="bi bi-door-open" aria-hidden="true"></i></div>
+            <h3 class="accommodation-category-title">Guesthouses &amp; B&amp;Bs</h3>
+            <p class="accommodation-category-text">Comfortable guesthouses in towns and villages — an easy way to meet Basotho hosts and get local advice.</p>
+            <span class="accommodation-category-link">View stays <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </a>
+
+          <a href="#featured-stays" class="accommodation-category-card reveal" data-cat-link="selfcatering">
+            <div class="accommodation-category-icon"><i class="bi bi-basket" aria-hidden="true"></i></div>
+            <h3 class="accommodation-category-title">Self-Catering</h3>
+            <p class="accommodation-category-text">Apartments and cottages with kitchen facilities — ideal for longer stays, families, and travellers on a budget.</p>
+            <span class="accommodation-category-link">View stays <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </a>
+
+          <a href="#featured-stays" class="accommodation-category-card reveal" data-cat-link="campsite">
+            <div class="accommodation-category-icon"><i class="bi bi-tree" aria-hidden="true"></i></div>
+            <h3 class="accommodation-category-title">Campsites &amp; Outdoor Stays</h3>
+            <p class="accommodation-category-text">Mountain campsites and eco-stays for travellers who want to sleep close to Lesotho's wild landscapes.</p>
+            <span class="accommodation-category-link">View stays <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </a>
+
+          <a href="#featured-stays" class="accommodation-category-card reveal" data-cat-link="cultural">
+            <div class="accommodation-category-icon"><i class="bi bi-people" aria-hidden="true"></i></div>
+            <h3 class="accommodation-category-title">Traditional Cultural Stays</h3>
+            <p class="accommodation-category-text">Homestays and rondavel-style accommodation where Basotho hosts share traditional food, music, and stories.</p>
+            <span class="accommodation-category-link">View stays <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURED STAYS ========== -->
+    <section class="section" id="featured-stays" aria-labelledby="featured-accom-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Featured Properties</p>
+          <h2 class="section-title" id="featured-accom-heading">Where to Stay in Lesotho</h2>
+          <p class="section-subtitle">A guide to accommodation styles and locations. Details reflect verified general information about each property — always confirm amenities and availability directly with the provider.</p>
+        </div>
+
+        <div class="accommodation-filters reveal" role="group" aria-label="Filter accommodation by type">
+          <button type="button" class="filter-btn active" data-accom-filter="all">All</button>
+          <button type="button" class="filter-btn" data-accom-filter="luxury">Luxury</button>
+          <button type="button" class="filter-btn" data-accom-filter="lodge">Lodges</button>
+          <button type="button" class="filter-btn" data-accom-filter="guesthouse">Guesthouses</button>
+          <button type="button" class="filter-btn" data-accom-filter="selfcatering">Self-catering</button>
+          <button type="button" class="filter-btn" data-accom-filter="campsite">Campsites</button>
+          <button type="button" class="filter-btn" data-accom-filter="cultural">Cultural</button>
+        </div>
+
+        <div class="accommodation-toolbar reveal">
+          <p class="accommodation-results" id="accomResultsCount" role="status" aria-live="polite"></p>
+          <div class="accommodation-sort">
+            <label for="accomSort" class="form-label visually-hidden">Sort accommodation</label>
+            <select id="accomSort" class="form-select form-select-sm">
+              <option value="default">Sort: default</option>
+              <option value="name-asc">Name A → Z</option>
+              <option value="name-desc">Name Z → A</option>
+              <option value="location-asc">Location A → Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row g-4" id="accommodationGrid">
+
+          <!-- Card 1: Luxury -->
+          <div class="col-md-6 col-lg-4 accommodation-item"
+               data-category="luxury"
+               data-name="Avani Lesotho Hotel & Casino"
+               data-location="Maseru">
+            <article class="accommodation-card">
+              <div class="accommodation-image-wrap">
+                <img src="assets/images/avani-maseru.jpg"
+                     alt="Avani Lesotho Hotel & Casino, Maseru"
+                     class="accommodation-image" loading="lazy">
+                <span class="accommodation-badge">Luxury Hotel</span>
+              </div>
+              <div class="accommodation-body">
+                <h3 class="accommodation-title">Avani Lesotho Hotel &amp; Casino</h3>
+                <p class="accommodation-location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Maseru</p>
+                <p class="accommodation-text">A full-service hotel in Lesotho's capital, well known for business travel and city stays. Amenities commonly include restaurants, conference facilities, and a pool.</p>
+                <ul class="accommodation-amenities">
+                  <li><i class="bi bi-wifi" aria-hidden="true"></i> Wi-Fi</li>
+                  <li><i class="bi bi-cup-hot" aria-hidden="true"></i> Restaurant</li>
+                  <li><i class="bi bi-water" aria-hidden="true"></i> Pool</li>
+                </ul>
+                <button type="button" class="btn btn-gold w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#accommodationModal"
+                        data-accommodation="avani">
+                  View Details
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2: Lodge -->
+          <div class="col-md-6 col-lg-4 accommodation-item"
+               data-category="lodge"
+               data-name="Semonkong Lodge"
+               data-location="Semonkong">
+            <article class="accommodation-card">
+              <div class="accommodation-image-wrap">
+                <img src="assets/images/semonkong-lodge.jpg"
+                     alt="Semonkong Lodge near Maletsunyane Falls"
+                     class="accommodation-image" loading="lazy">
+                <span class="accommodation-badge">Mountain Lodge</span>
+              </div>
+              <div class="accommodation-body">
+                <h3 class="accommodation-title">Semonkong Lodge</h3>
+                <p class="accommodation-location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Semonkong</p>
+                <p class="accommodation-text">A well-established lodge near the Maletsunyane Falls, popular with travellers seeking abseiling, pony trekking, and hiking. Rustic mountain character.</p>
+                <ul class="accommodation-amenities">
+                  <li><i class="bi bi-fire" aria-hidden="true"></i> Fireplace</li>
+                  <li><i class="bi bi-cup-hot" aria-hidden="true"></i> Meals</li>
+                  <li><i class="bi bi-bicycle" aria-hidden="true"></i> Activities</li>
+                </ul>
+                <button type="button" class="btn btn-gold w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#accommodationModal"
+                        data-accommodation="semonkong">
+                  View Details
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3: Lodge -->
+          <div class="col-md-6 col-lg-4 accommodation-item"
+               data-category="lodge"
+               data-name="Maliba Mountain Lodge"
+               data-location="Ts'ehlanyane National Park">
+            <article class="accommodation-card">
+              <div class="accommodation-image-wrap">
+                <img src="assets/images/maliba-lodge.jpg"
+                     alt="Maliba Mountain Lodge in Ts'ehlanyane National Park"
+                     class="accommodation-image" loading="lazy">
+                <span class="accommodation-badge">Mountain Lodge</span>
+              </div>
+              <div class="accommodation-body">
+                <h3 class="accommodation-title">Maliba Mountain Lodge</h3>
+                <p class="accommodation-location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Ts'ehlanyane National Park</p>
+                <p class="accommodation-text">A lodge set inside Ts'ehlanyane National Park, known for its mountain scenery and access to hiking trails. A popular base for exploring the northern highlands.</p>
+                <ul class="accommodation-amenities">
+                  <li><i class="bi bi-tree" aria-hidden="true"></i> Park access</li>
+                  <li><i class="bi bi-cup-hot" aria-hidden="true"></i> Restaurant</li>
+                  <li><i class="bi bi-signpost-split" aria-hidden="true"></i> Hiking</li>
+                </ul>
+                <button type="button" class="btn btn-gold w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#accommodationModal"
+                        data-accommodation="maliba">
+                  View Details
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 4: Lodge -->
+          <div class="col-md-6 col-lg-4 accommodation-item"
+               data-category="lodge"
+               data-name="Afriski Mountain Lodge"
+               data-location="Afriski, Butha-Buthe">
+            <article class="accommodation-card">
+              <div class="accommodation-image-wrap">
+                <img src="assets/images/afriski-lodge.jpg"
+                     alt="Afriski Mountain Lodge ski resort accommodation"
+                     class="accommodation-image" loading="lazy">
+                <span class="accommodation-badge">Mountain Lodge</span>
+              </div>
+              <div class="accommodation-body">
+                <h3 class="accommodation-title">Afriski Mountain Lodge</h3>
+                <p class="accommodation-location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Afriski, Butha-Buthe</p>
+                <p class="accommodation-text">Ski-in accommodation at Afriski Mountain Resort. Ideal in winter for skiing and snowboarding, and in summer as a base for hiking and mountain biking.</p>
+                <ul class="accommodation-amenities">
+                  <li><i class="bi bi-snow2" aria-hidden="true"></i> Ski access</li>
+                  <li><i class="bi bi-fire" aria-hidden="true"></i> Heating</li>
+                  <li><i class="bi bi-cup-hot" aria-hidden="true"></i> Restaurant</li>
+                </ul>
+                <button type="button" class="btn btn-gold w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#accommodationModal"
+                        data-accommodation="afriski">
+                  View Details
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 5: Guesthouse -->
+          <div class="col-md-6 col-lg-4 accommodation-item"
+               data-category="guesthouse"
+               data-name="Malealea Lodge"
+               data-location="Malealea">
+            <article class="accommodation-card">
+              <div class="accommodation-image-wrap">
+                <img src="assets/images/malealea-lodge.jpg"
+                     alt="Malealea Lodge in the western highlands of Lesotho"
+                     class="accommodation-image" loading="lazy">
+                <span class="accommodation-badge">Guesthouse &amp; Lodge</span>
+              </div>
+              <div class="accommodation-body">
+                <h3 class="accommodation-title">Malealea Lodge</h3>
+                <p class="accommodation-location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Malealea</p>
+                <p class="accommodation-text">A well-known lodge and cultural base in western Lesotho. Popular for pony trekking, hiking, and interactions with nearby Basotho villages.</p>
+                <ul class="accommodation-amenities">
+                  <li><i class="bi bi-people" aria-hidden="true"></i> Cultural activities</li>
+                  <li><i class="bi bi-cup-hot" aria-hidden="true"></i> Meals</li>
+                  <li><i class="bi bi-bicycle" aria-hidden="true"></i> Pony trekking</li>
+                </ul>
+                <button type="button" class="btn btn-gold w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#accommodationModal"
+                        data-accommodation="malealea">
+                  View Details
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 6: Self-catering -->
+          <div class="col-md-6 col-lg-4 accommodation-item"
+               data-category="selfcatering"
+               data-name="Maseru Self-Catering Apartments"
+               data-location="Maseru">
+            <article class="accommodation-card">
+              <div class="accommodation-image-wrap">
+                <img src="assets/images/maseru-apartments.jpg"
+                     alt="Self-catering apartment accommodation in Maseru"
+                     class="accommodation-image" loading="lazy">
+                <span class="accommodation-badge">Self-Catering</span>
+              </div>
+              <div class="accommodation-body">
+                <h3 class="accommodation-title">Maseru Self-Catering Apartments</h3>
+                <p class="accommodation-location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Maseru</p>
+                <p class="accommodation-text">A style of accommodation available in Maseru: apartment-style stays with kitchen facilities. Good for families, longer visits, and independent travellers.</p>
+                <ul class="accommodation-amenities">
+                  <li><i class="bi bi-basket" aria-hidden="true"></i> Kitchenette</li>
+                  <li><i class="bi bi-wifi" aria-hidden="true"></i> Wi-Fi</li>
+                  <li><i class="bi bi-car-front" aria-hidden="true"></i> Parking</li>
+                </ul>
+                <button type="button" class="btn btn-gold w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#accommodationModal"
+                        data-accommodation="maseru-apartments">
+                  View Details
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 7: Campsite -->
+          <div class="col-md-6 col-lg-4 accommodation-item"
+               data-category="campsite"
+               data-name="Sehlabathebe Campsite"
+               data-location="Sehlabathebe National Park">
+            <article class="accommodation-card">
+              <div class="accommodation-image-wrap">
+                <img src="assets/images/sehlabathebe-camp.jpg"
+                     alt="Campsite in Sehlabathebe National Park"
+                     class="accommodation-image" loading="lazy">
+                <span class="accommodation-badge">Campsite</span>
+              </div>
+              <div class="accommodation-body">
+                <h3 class="accommodation-title">Sehlabathebe Campsite</h3>
+                <p class="accommodation-location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Sehlabathebe National Park</p>
+                <p class="accommodation-text">Basic camping in Lesotho's oldest national park. A remote, adventurous option suited to self-sufficient travellers with their own equipment.</p>
+                <ul class="accommodation-amenities">
+                  <li><i class="bi bi-tree" aria-hidden="true"></i> Wilderness</li>
+                  <li><i class="bi bi-moon-stars" aria-hidden="true"></i> Star views</li>
+                  <li><i class="bi bi-signpost-split" aria-hidden="true"></i> Hiking trails</li>
+                </ul>
+                <button type="button" class="btn btn-gold w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#accommodationModal"
+                        data-accommodation="sehlabathebe-camp">
+                  View Details
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 8: Cultural -->
+          <div class="col-md-6 col-lg-4 accommodation-item"
+               data-category="cultural"
+               data-name="Basotho Cultural Village Stay"
+               data-location="Thaba Bosiu area">
+            <article class="accommodation-card">
+              <div class="accommodation-image-wrap">
+                <img src="assets/images/cultural-village.jpg"
+                     alt="Traditional Basotho cultural village stay"
+                     class="accommodation-image" loading="lazy">
+                <span class="accommodation-badge">Cultural Stay</span>
+              </div>
+              <div class="accommodation-body">
+                <h3 class="accommodation-title">Basotho Cultural Village Stay</h3>
+                <p class="accommodation-location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Thaba Bosiu area</p>
+                <p class="accommodation-text">Cultural stays that introduce visitors to Basotho customs, food, and traditional architecture. Experiences vary by host community — book through reputable local operators.</p>
+                <ul class="accommodation-amenities">
+                  <li><i class="bi bi-people" aria-hidden="true"></i> Cultural immersion</li>
+                  <li><i class="bi bi-cup-hot" aria-hidden="true"></i> Traditional meals</li>
+                  <li><i class="bi bi-music-note" aria-hidden="true"></i> Storytelling</li>
+                </ul>
+                <button type="button" class="btn btn-gold w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#accommodationModal"
+                        data-accommodation="cultural-village">
+                  View Details
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 9: Guesthouse -->
+          <div class="col-md-6 col-lg-4 accommodation-item"
+               data-category="guesthouse"
+               data-name="Morija Guesthouse"
+               data-location="Morija">
+            <article class="accommodation-card">
+              <div class="accommodation-image-wrap">
+                <img src="assets/images/morija-guesthouse.jpg"
+                     alt="Guesthouse in the historic mission town of Morija"
+                     class="accommodation-image" loading="lazy">
+                <span class="accommodation-badge">Guesthouse</span>
+              </div>
+              <div class="accommodation-body">
+                <h3 class="accommodation-title">Morija Guesthouse</h3>
+                <p class="accommodation-location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Morija</p>
+                <p class="accommodation-text">A quiet guesthouse option in Lesotho's historic mission town — ideal for travellers interested in Morija's museum, church, and literary heritage.</p>
+                <ul class="accommodation-amenities">
+                  <li><i class="bi bi-book" aria-hidden="true"></i> Heritage area</li>
+                  <li><i class="bi bi-wifi" aria-hidden="true"></i> Wi-Fi</li>
+                  <li><i class="bi bi-cup-hot" aria-hidden="true"></i> Breakfast</li>
+                </ul>
+                <button type="button" class="btn btn-gold w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#accommodationModal"
+                        data-accommodation="morija-guesthouse">
+                  View Details
+                </button>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="accomEmpty" hidden>
+          <i class="bi bi-house-x" aria-hidden="true"></i>
+          <h3>No accommodation matches your search</h3>
+          <p>Try a different location, type, or reset your filters.</p>
+          <button type="button" class="btn btn-gold" id="accomEmptyResetBtn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY BOOK THROUGH OUR GUIDE ========== -->
+    <section class="section section-alt" aria-labelledby="why-book-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Plan With Confidence</p>
+          <h2 class="section-title" id="why-book-heading">Why Use This Guide?</h2>
+          <p class="section-subtitle">A guide to help you compare, plan, and prepare — without pressure to book.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="info-card">
+              <div class="info-card-icon"><i class="bi bi-columns-gap" aria-hidden="true"></i></div>
+              <h3 class="info-card-title">Compare Types</h3>
+              <p class="info-card-text">Understand the difference between lodges, guesthouses, self-catering stays, campsites, and cultural homestays — then pick what fits your style of travel.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="info-card">
+              <div class="info-card-icon"><i class="bi bi-geo" aria-hidden="true"></i></div>
+              <h3 class="info-card-title">Choose Locations</h3>
+              <p class="info-card-text">Match accommodation to what you want to see — Maseru for city access, Semonkong for waterfalls, Afriski for skiing, or remote parks for wilderness.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="info-card">
+              <div class="info-card-icon"><i class="bi bi-calendar-check" aria-hidden="true"></i></div>
+              <h3 class="info-card-title">Plan Ahead</h3>
+              <p class="info-card-text">Lesotho has limited accommodation in remote areas, and demand rises in winter and holidays. Early contact with providers is strongly recommended.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="info-card">
+              <div class="info-card-icon"><i class="bi bi-telephone" aria-hidden="true"></i></div>
+              <h3 class="info-card-title">Contact Directly</h3>
+              <p class="info-card-text">Confirm availability, pricing, accessibility, and amenities directly with each property before travelling. Details can change.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TRAVEL TIPS ========== -->
+    <section class="section" aria-labelledby="tips-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Travel Tips</p>
+          <h2 class="section-title" id="tips-heading">Before You Book</h2>
+          <p class="section-subtitle">Practical advice for choosing accommodation in Lesotho — a country of mountain roads and dramatic seasons.</p>
+        </div>
+
+        <div class="accommodation-tips-grid">
+          <div class="accommodation-tip reveal">
+            <div class="accommodation-tip-icon"><i class="bi bi-signpost-split" aria-hidden="true"></i></div>
+            <h3 class="accommodation-tip-title">Check Road Access</h3>
+            <p class="accommodation-tip-text">Some mountain lodges are reached via gravel or 4x4-only roads. Confirm with the property how best to reach them and whether a standard car is suitable.</p>
+          </div>
+          <div class="accommodation-tip reveal">
+            <div class="accommodation-tip-icon"><i class="bi bi-snow" aria-hidden="true"></i></div>
+            <h3 class="accommodation-tip-title">Consider the Season</h3>
+            <p class="accommodation-tip-text">Winter brings snow and cold nights at altitude — confirm heating and road conditions. Summer can bring afternoon storms. Pack accordingly.</p>
+          </div>
+          <div class="accommodation-tip reveal">
+            <div class="accommodation-tip-icon"><i class="bi bi-car-front" aria-hidden="true"></i></div>
+            <h3 class="accommodation-tip-title">Plan Transport</h3>
+            <p class="accommodation-tip-text">Public transport exists but is limited in remote areas. Ask your accommodation about transfers, shuttles, or recommended local drivers.</p>
+          </div>
+          <div class="accommodation-tip reveal">
+            <div class="accommodation-tip-icon"><i class="bi bi-plug" aria-hidden="true"></i></div>
+            <h3 class="accommodation-tip-title">Check Amenities</h3>
+            <p class="accommodation-tip-text">Power and Wi-Fi can be limited in remote areas. Ask about water, heating, meals, and mobile signal before you commit — especially in winter.</p>
+          </div>
+          <div class="accommodation-tip reveal">
+            <div class="accommodation-tip-icon"><i class="bi bi-envelope-paper" aria-hidden="true"></i></div>
+            <h3 class="accommodation-tip-title">Contact Directly</h3>
+            <p class="accommodation-tip-text">Confirm the booking, price, and payment method with the accommodation provider directly. Never rely only on third-party listings.</p>
+          </div>
+          <div class="accommodation-tip reveal">
+            <div class="accommodation-tip-icon"><i class="bi bi-cash-coin" aria-hidden="true"></i></div>
+            <h3 class="accommodation-tip-title">Bring Cash</h3>
+            <p class="accommodation-tip-text">ATMs are widely available in Maseru and larger towns, but rural accommodation may only accept cash. Carry enough Maloti or Rand for the trip.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="section cta-section" aria-labelledby="accom-cta-heading">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2 class="cta-title" id="accom-cta-heading">Ready to Explore Lesotho?</h2>
+          <p class="cta-text">Browse destinations, plan your journey, or send us an enquiry to help shape your itinerary.</p>
+          <div class="cta-actions">
+            <a href="destinations.html" class="btn btn-gold btn-lg">Explore Destinations</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg">Send an Enquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ACCOMMODATION DETAILS MODAL ========== -->
+  <div class="modal fade accommodation-modal" id="accommodationModal" tabindex="-1" aria-labelledby="accommodationModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="accommodationModalTitle">Accommodation</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="accomModalImage" src="" alt="" class="modal-hero-img">
+          <span class="modal-badge" id="accomModalBadge">Lodge</span>
+          <p class="accommodation-modal-location" id="accomModalLocation"></p>
+          <p class="modal-description" id="accomModalDescription"></p>
+
+          <div class="modal-info-grid">
+            <div>
+              <h3>Type</h3>
+              <p id="accomModalType"></p>
+            </div>
+            <div>
+              <h3>Location</h3>
+              <p id="accomModalLocationInfo"></p>
+            </div>
+            <div>
+              <h3>Best For</h3>
+              <p id="accomModalBestFor"></p>
+            </div>
+            <div>
+              <h3>Amenities</h3>
+              <p id="accomModalAmenities"></p>
+            </div>
+          </div>
+
+          <div class="accommodation-modal-note">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            This is a guide entry, not a booking. Confirm amenities, pricing, and availability directly with the property.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-gold" data-bs-dismiss="modal">Close</button>
+          <a href="contact.html" class="btn btn-gold">Send an Enquiry</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <a class="footer-brand" href="index.html">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 28L12 10L20 22L26 14L32 28H4Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              <circle cx="26" cy="8" r="2.5" fill="currentColor"/>
+            </svg>
+            <span>Kingdom in the Sky</span>
+          </a>
+          <p class="footer-desc">Discover the Beauty of Lesotho. A premium travel guide to Southern Africa's mountain kingdom.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Lesotho</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="accommodation.html">Accommodation</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Plan</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Travel Enquiry</a></li>
+            <li><a href="about.html">Responsible Tourism</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <address class="footer-contact">
+            <p><i class="bi bi-geo-alt" aria-hidden="true"></i> Maseru, Lesotho</p>
+            <p><i class="bi bi-envelope" aria-hidden="true"></i> liteboho@kingdominthesky.com</p>
+            <p><i class="bi bi-telephone" aria-hidden="true"></i> +266 63422093</p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="footerYear"></span> Kingdom in the Sky. Educational demonstration project. Not an official tourism authority. Accommodation information is for reference only — no bookings are processed on this site.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/accommodation.js"></script>
+</body>
+</html>

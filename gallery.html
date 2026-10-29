@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Photo gallery of Lesotho — mountains, waterfalls, culture, and adventure in the Kingdom in the Sky.">
+  <title>Gallery | Kingdom in the Sky</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar navbar-expand-lg site-navbar scrolled" id="siteNavbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a class="navbar-brand brand" href="index.html" aria-label="Kingdom in the Sky — Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 28L12 10L20 22L26 14L32 28H4Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+            <circle cx="26" cy="8" r="2.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Kingdom in the Sky</span>
+          <span class="brand-tagline">Discover the Beauty of Lesotho</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+          <li class="nav-item"><a class="nav-link" href="accommodation.html">Accommodation</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero" aria-labelledby="gallery-hero-heading">
+      <div class="page-hero-bg" style="background-image: url('assets/images/sehlabathebe.jpg');"></div>
+      <div class="page-hero-overlay"></div>
+      <div class="container page-hero-content">
+        <p class="page-hero-kicker">Through the Lens</p>
+        <h1 class="page-hero-title" id="gallery-hero-heading">Gallery</h1>
+        <p class="page-hero-desc">A visual journey through the mountains, waterfalls, culture, and adventure of Lesotho.</p>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb-custom">
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Gallery</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ========== GALLERY ========== -->
+    <section class="section gallery-section" aria-labelledby="gallery-grid-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Explore by Category</p>
+          <h2 class="section-title" id="gallery-grid-heading">Lesotho in Pictures</h2>
+          <p class="section-subtitle">Click any image to open the lightbox. Use the arrow keys to navigate, or press Escape to close.</p>
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="gallery-filters" role="group" aria-label="Filter gallery by category">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="landscapes">Landscapes</button>
+          <button type="button" class="filter-btn" data-filter="culture">Culture</button>
+          <button type="button" class="filter-btn" data-filter="adventure">Adventure</button>
+          <button type="button" class="filter-btn" data-filter="wildlife">Wildlife</button>
+        </div>
+
+        <!-- Gallery grid -->
+        <div class="gallery-grid" id="galleryGrid">
+
+          <figure class="gallery-item reveal" data-category="landscapes" data-caption="Mountain vistas of the Maluti range">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Mountain vistas of the Maluti range">
+              <img src="assets/images/sani-pass.jpg" alt="Dramatic mountain peaks in the Maluti range, Lesotho" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Maluti Mountains</span>
+                <span class="gallery-caption-cat">Landscapes</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="landscapes" data-caption="Maletsunyane Falls near Semonkong">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Maletsunyane Falls near Semonkong">
+              <img src="assets/images/maletsunyane.jpg" alt="Maletsunyane Falls plunging into a gorge" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Maletsunyane Falls</span>
+                <span class="gallery-caption-cat">Landscapes</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="adventure" data-caption="Ski slopes at Afriski Mountain Resort">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Ski slopes at Afriski Mountain Resort">
+              <img src="assets/images/afriski.jpg" alt="Snow-covered ski slopes at Afriski" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Afriski Ski Slopes</span>
+                <span class="gallery-caption-cat">Adventure</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="landscapes" data-caption="Katse Dam and the highland reservoir">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Katse Dam and the highland reservoir">
+              <img src="assets/images/katse.jpg" alt="Katse Dam reservoir surrounded by mountains" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Katse Dam</span>
+                <span class="gallery-caption-cat">Landscapes</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="culture" data-caption="Traditional mountain village life">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Traditional mountain village life">
+              <img src="assets/images/culture.jpg" alt="Traditional Basotho village in the mountains" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Village Life</span>
+                <span class="gallery-caption-cat">Culture</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="landscapes" data-caption="Sehlabathebe National Park wilderness">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Sehlabathebe National Park wilderness">
+              <img src="assets/images/sehlabathebe.jpg" alt="Sehlabathebe wilderness and sandstone formations" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Sehlabathebe</span>
+                <span class="gallery-caption-cat">Landscapes</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="culture" data-caption="Historic Morija mission buildings">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Historic Morija mission buildings">
+              <img src="assets/images/morija.jpg" alt="Historic Morija mission buildings" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Morija Mission</span>
+                <span class="gallery-caption-cat">Culture</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="adventure" data-caption="Pony trekking through the highlands">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Pony trekking through the highlands">
+              <img src="assets/images/pony-trekking.jpg" alt="Pony trekking through the Lesotho highlands" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Pony Trekking</span>
+                <span class="gallery-caption-cat">Adventure</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="landscapes" data-caption="Thaba Bosiu plateau at dusk">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Thaba Bosiu plateau at dusk">
+              <img src="assets/images/thaba-bosiu.jpg" alt="Thaba Bosiu mountain plateau at dusk" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Thaba Bosiu</span>
+                <span class="gallery-caption-cat">Landscapes</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="adventure" data-caption="Hikers on the mountain trails">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Hikers on the mountain trails">
+              <img src="assets/images/hiking.jpg" alt="Hikers on a mountain trail in Lesotho" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Highland Hiking</span>
+                <span class="gallery-caption-cat">Adventure</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="wildlife" data-caption="Indigenous flora in Ts'ehlanyane National Park">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Indigenous flora in Ts'ehlanyane National Park">
+              <img src="assets/images/tsehlanyane.jpg" alt="Indigenous forest in Ts'ehlanyane National Park" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Ts'ehlanyane Flora</span>
+                <span class="gallery-caption-cat">Wildlife</span>
+              </figcaption>
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-category="wildlife" data-caption="Birds of the Lesotho highlands">
+            <button type="button" class="gallery-trigger" aria-label="Open image: Birds of the Lesotho highlands">
+              <img src="assets/images/highland-birds.jpg" alt="Bird in the Lesotho highlands" loading="lazy">
+              <figcaption class="gallery-caption">
+                <span class="gallery-caption-title">Highland Birds</span>
+                <span class="gallery-caption-cat">Wildlife</span>
+              </figcaption>
+            </button>
+          </figure>
+
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="galleryEmpty" hidden>
+          <i class="bi bi-images" aria-hidden="true"></i>
+          <h3>No images in this category</h3>
+          <p>Try selecting a different category.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+      <i class="bi bi-x-lg" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <i class="bi bi-chevron-left" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next image">
+      <i class="bi bi-chevron-right" aria-hidden="true"></i>
+    </button>
+
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImage">
+      <div class="lightbox-caption">
+        <p id="lightboxCaption"></p>
+        <p class="lightbox-counter" id="lightboxCounter"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <a class="footer-brand" href="index.html">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 28L12 10L20 22L26 14L32 28H4Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              <circle cx="26" cy="8" r="2.5" fill="currentColor"/>
+            </svg>
+            <span>Kingdom in the Sky</span>
+          </a>
+          <p class="footer-desc">Discover the Beauty of Lesotho. A premium travel guide to Southern Africa's mountain kingdom.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Lesotho</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="accommodation.html">Accommodation</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Plan</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Travel Enquiry</a></li>
+            <li><a href="about.html">Responsible Tourism</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <address class="footer-contact">
+            <p><i class="bi bi-geo-alt" aria-hidden="true"></i> Maseru, Lesotho</p>
+            <p><i class="bi bi-envelope" aria-hidden="true"></i> liteboho@kingdominthesky.com</p>
+            <p><i class="bi bi-telephone" aria-hidden="true"></i> +266 63422093</p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="footerYear"></span> Kingdom in the Sky. Educational demonstration project. Not an official tourism authority.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

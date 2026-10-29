@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Kingdom in the Sky — send a travel enquiry about visiting Lesotho.">
+  <title>Contact | Kingdom in the Sky</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar navbar-expand-lg site-navbar scrolled" id="siteNavbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a class="navbar-brand brand" href="index.html" aria-label="Kingdom in the Sky — Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 28L12 10L20 22L26 14L32 28H4Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+            <circle cx="26" cy="8" r="2.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Kingdom in the Sky</span>
+          <span class="brand-tagline">Discover the Beauty of Lesotho</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+          <li class="nav-item"><a class="nav-link" href="accommodation.html">Accommodation</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero" aria-labelledby="contact-hero-heading">
+      <div class="page-hero-bg" style="background-image: url('assets/images/sani-pass.jpg');"></div>
+      <div class="page-hero-overlay"></div>
+      <div class="container page-hero-content">
+        <p class="page-hero-kicker">Get in Touch</p>
+        <h1 class="page-hero-title" id="contact-hero-heading">Contact Us</h1>
+        <p class="page-hero-desc">Have a question about travelling to Lesotho? Send us a travel enquiry and we'll help you plan.</p>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb-custom">
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Contact</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT INFO ========== -->
+    <section class="section" aria-labelledby="contact-info-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Reach Us</p>
+          <h2 class="section-title" id="contact-info-heading">Contact Information</h2>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4 reveal">
+            <div class="contact-info-card">
+              <div class="contact-info-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
+              <h3 class="contact-info-title">Location</h3>
+              <p>Maseru, Lesotho</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="contact-info-card">
+              <div class="contact-info-icon"><i class="bi bi-envelope" aria-hidden="true"></i></div>
+              <h3 class="contact-info-title">Email</h3>
+              <p>liteboho@kingdominthesky.com</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="contact-info-card">
+              <div class="contact-info-icon"><i class="bi bi-telephone" aria-hidden="true"></i></div>
+              <h3 class="contact-info-title">Phone</h3>
+              <p>+266 63422093</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ENQUIRY FORM ========== -->
+    <section class="section section-alt" aria-labelledby="form-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="form-card reveal">
+              <div class="section-header text-center mb-5">
+                <p class="section-kicker">Travel Enquiry</p>
+                <h2 class="section-title" id="form-heading">Plan Your Journey</h2>
+                <p class="section-subtitle">Fill in the form below and we'll get back to you. This is a frontend demonstration — submissions are not stored or sent.</p>
+              </div>
+
+              <form id="contactForm" class="contact-form" novalidate>
+                <div class="row g-4">
+
+                  <!-- Full Name -->
+                  <div class="col-md-6">
+                    <label for="fullName" class="form-label">Full Name <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required autocomplete="name" aria-describedby="fullNameError">
+                    <div class="invalid-feedback" id="fullNameError" role="alert"></div>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email Address <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="email" class="form-control" id="email" name="email" required autocomplete="email" aria-describedby="emailError">
+                    <div class="invalid-feedback" id="emailError" role="alert"></div>
+                  </div>
+
+                  <!-- Phone -->
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel" placeholder="+266 63422093" aria-describedby="phoneError">
+                    <div class="invalid-feedback" id="phoneError" role="alert"></div>
+                  </div>
+
+                  <!-- Destination -->
+                  <div class="col-md-6">
+                    <label for="destination" class="form-label">Destination of Interest <span class="required-mark" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="destination" name="destination" required aria-describedby="destinationError">
+                      <option value="">Choose a destination...</option>
+                      <option value="maletsunyane">Maletsunyane Falls</option>
+                      <option value="katse">Katse Dam</option>
+                      <option value="sani">Sani Pass</option>
+                      <option value="sehlabathebe">Sehlabathebe National Park</option>
+                      <option value="thababosiu">Thaba Bosiu</option>
+                      <option value="afriski">Afriski Mountain Resort</option>
+                      <option value="morija">Morija</option>
+                      <option value="tsehlanyane">Ts'ehlanyane National Park</option>
+                      <option value="maseru">Maseru</option>
+                      <option value="multiple">Multiple Destinations</option>
+                    </select>
+                    <div class="invalid-feedback" id="destinationError" role="alert"></div>
+                  </div>
+
+                  <!-- Preferred Travel Date -->
+                  <div class="col-md-6">
+                    <label for="travelDate" class="form-label">Preferred Travel Date <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="date" class="form-control" id="travelDate" name="travelDate" required aria-describedby="travelDateError">
+                    <div class="invalid-feedback" id="travelDateError" role="alert"></div>
+                  </div>
+
+                  <!-- Number of Travellers -->
+                  <div class="col-md-6">
+                    <label for="travellers" class="form-label">Number of Travellers <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="number" class="form-control" id="travellers" name="travellers" min="1" max="30" required value="1" aria-describedby="travellersError">
+                    <div class="invalid-feedback" id="travellersError" role="alert"></div>
+                  </div>
+
+                  <!-- Type of Experience -->
+                  <div class="col-md-6">
+                    <label for="experience" class="form-label">Type of Experience <span class="required-mark" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="experience" name="experience" required aria-describedby="experienceError">
+                      <option value="">Choose an experience...</option>
+                      <option value="adventure">Adventure</option>
+                      <option value="culture">Cultural</option>
+                      <option value="nature">Nature & Wildlife</option>
+                      <option value="photography">Photography</option>
+                      <option value="skiing">Skiing & Snow</option>
+                      <option value="mixed">Mixed / Not sure</option>
+                    </select>
+                    <div class="invalid-feedback" id="experienceError" role="alert"></div>
+                  </div>
+
+                  <!-- Additional Message -->
+                  <div class="col-12">
+                    <label for="message" class="form-label">Additional Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us more about your plans..." aria-describedby="messageError"></textarea>
+                    <div class="invalid-feedback" id="messageError" role="alert"></div>
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="col-12 form-submit-row">
+                    <button type="submit" class="btn btn-gold btn-lg">Send Enquiry</button>
+                    <button type="reset" class="btn btn-outline-gold btn-lg" id="formReset">Reset</button>
+                  </div>
+
+                </div>
+
+                <!-- Global feedback -->
+                <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RESPONSIBLE NOTE ========== -->
+    <section class="section" aria-labelledby="contact-notes-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center reveal">
+            <h2 class="section-title" id="contact-notes-heading">Please Note</h2>
+            <p class="mt-3">This website is a front-end demonstration created for an educational assignment. The enquiry form validates your input but does <strong>not</strong> send emails, store bookings, or process payments. No real travel bookings can be made through this site. When planning a real trip to Lesotho, please consult official tourism sources and reputable local operators.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <a class="footer-brand" href="index.html">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 28L12 10L20 22L26 14L32 28H4Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              <circle cx="26" cy="8" r="2.5" fill="currentColor"/>
+            </svg>
+            <span>Kingdom in the Sky</span>
+          </a>
+          <p class="footer-desc">Discover the Beauty of Lesotho. A premium travel guide to Southern Africa's mountain kingdom.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Lesotho</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="accommodation.html">Accommodation</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Plan</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Travel Enquiry</a></li>
+            <li><a href="about.html">Responsible Tourism</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <address class="footer-contact">
+            <p><i class="bi bi-geo-alt" aria-hidden="true"></i> Maseru, Lesotho</p>
+            <p><i class="bi bi-envelope" aria-hidden="true"></i> liteboho@kingdominthesky.com</p>
+            <p><i class="bi bi-telephone" aria-hidden="true"></i> +266 63422093</p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="footerYear"></span> Kingdom in the Sky. Educational demonstration project. Not an official tourism authority.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/form-validation.js"></script>
+</body>
+</html>

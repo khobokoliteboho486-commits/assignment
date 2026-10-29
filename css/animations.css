@@ -1,0 +1,672 @@
+/* =========================================================
+   KINGDOM IN THE SKY — Animations Stylesheet
+   ========================================================= */
+
+/* ---------- KEYFRAMES ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1.18);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes underlineGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slideIndicator {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ---------- HERO SLIDESHOW ---------- */
+.hero-slideshow .slide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease, visibility 0s linear 1.2s;
+}
+
+.hero-slideshow .slide.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.2s ease, visibility 0s linear 0s;
+}
+
+/* Background zoom on active slide */
+.hero-slideshow .slide.active .slide-bg {
+  animation: kenBurns 10s ease-out forwards;
+}
+
+/* Slide content stagger */
+.hero-slideshow .slide.active .slide-kicker {
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.hero-slideshow .slide.active .slide-title {
+  animation: fadeInUp 0.9s ease 0.45s both;
+}
+
+.hero-slideshow .slide.active .slide-desc {
+  animation: fadeInUp 0.9s ease 0.6s both;
+}
+
+.hero-slideshow .slide.active .slide-actions {
+  animation: fadeInUp 0.9s ease 0.75s both;
+}
+
+/* Indicator active state */
+.hero-slideshow .indicator {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slideshow .indicator.active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--gold);
+  transform-origin: left center;
+  animation: slideIndicator 0.4s ease forwards;
+}
+
+/* Navbar toggler animation (mobile) */
+.custom-toggler .toggler-line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-toggler[aria-expanded="true"] .toggler-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.custom-toggler[aria-expanded="true"] .toggler-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.custom-toggler[aria-expanded="true"] .toggler-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- SCROLL REVEAL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* Alternate reveal directions */
+.reveal-left {
+  transform: translateX(-32px);
+}
+
+.reveal-left.revealed {
+  transform: translateX(0);
+}
+
+.reveal-right {
+  transform: translateX(32px);
+}
+
+.reveal-right.revealed {
+  transform: translateX(0);
+}
+
+.reveal-zoom {
+  transform: scale(0.94);
+}
+
+.reveal-zoom.revealed {
+  transform: scale(1);
+}
+
+/* ---------- NAVIGATION UNDERLINE ---------- */
+.site-navbar .nav-link::after {
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- BUTTON HOVER ---------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before,
+.btn-outline-gold::before,
+.btn-outline-light::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: -1;
+}
+
+.btn-gold:hover::before,
+.btn-outline-gold:hover::before,
+.btn-outline-light:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-gold,
+.btn-outline-gold,
+.btn-outline-light {
+  z-index: 1;
+}
+
+/* ---------- CARD HOVER ---------- */
+.destination-card,
+.experience-card,
+.info-card,
+.craft-card,
+.testimonial-card,
+.contact-info-card,
+.why-item,
+.responsible-card {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-top-color 0.4s ease,
+              background-color 0.4s ease;
+}
+
+/* ---------- IMAGE ZOOM ---------- */
+.destination-card:hover .card-image,
+.craft-card:hover .craft-image,
+.experience-card-full:hover .experience-image,
+.gallery-preview-item:hover img {
+  transform: scale(1.08);
+}
+
+/* ---------- GALLERY OVERLAY ---------- */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item .gallery-trigger::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(16, 29, 45, 0.85) 0%,
+    rgba(16, 29, 45, 0.3) 40%,
+    rgba(16, 29, 45, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-trigger::after,
+.gallery-trigger:focus-visible::after {
+  opacity: 1;
+}
+
+.gallery-item .gallery-caption {
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-caption,
+.gallery-trigger:focus-visible .gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Filtered-out items fade out */
+.gallery-item.fade-out {
+  animation: fadeOutShrink 0.3s ease forwards;
+}
+
+@keyframes fadeOutShrink {
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.gallery-item.hidden {
+  display: none;
+}
+
+/* ---------- MODAL APPEARANCE ---------- */
+.modal.fade .modal-dialog {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  transform: translateY(20px) scale(0.96);
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.modal.fade .modal-content {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+  opacity: 1;
+}
+
+.modal-backdrop.fade {
+  transition: opacity 0.3s ease;
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.lightbox.open .lightbox-content {
+  animation: zoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lightbox-content img {
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-content img.loading {
+  opacity: 0.4;
+}
+
+/* ---------- FORM FEEDBACK ---------- */
+.form-feedback.show {
+  animation: fadeInUp 0.4s ease;
+}
+
+.form-feedback.success {
+  animation: fadeInUp 0.5s ease;
+}
+
+.form-feedback.error {
+  animation: shakeX 0.5s ease;
+}
+
+@keyframes shakeX {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+.newsletter-feedback.success,
+.newsletter-feedback.error {
+  animation: fadeIn 0.4s ease;
+}
+
+/* Field shake on invalid */
+.contact-form .form-control.is-invalid,
+.contact-form .form-select.is-invalid {
+  animation: shakeX 0.4s ease;
+}
+
+/* ---------- BACK TO TOP ---------- */
+.back-to-top {
+  transition: opacity 0.35s ease, visibility 0.35s ease,
+              transform 0.35s ease, background-color 0.3s ease;
+}
+
+.back-to-top.visible {
+  animation: fadeInUp 0.4s ease;
+}
+
+/* ---------- PAGE LOAD FADE ---------- */
+body {
+  animation: fadeIn 0.6s ease;
+}
+
+/* ---------- HERO PAGE HERO TEXT ---------- */
+.page-hero-kicker {
+  animation: fadeInDown 0.8s ease 0.1s both;
+}
+
+.page-hero-title {
+  animation: fadeInUp 0.9s ease 0.25s both;
+}
+
+.page-hero-desc {
+  animation: fadeInUp 0.9s ease 0.4s both;
+}
+
+.page-hero .breadcrumb-custom {
+  animation: fadeIn 1s ease 0.6s both;
+}
+
+/* ---------- SECTION KICKER UNDERLINE ---------- */
+.section-kicker {
+  position: relative;
+  display: inline-block;
+}
+
+.section-kicker::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--gold);
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+}
+
+.section-header:hover .section-kicker::after {
+  width: 70px;
+}
+
+/* ---------- WHY ITEM NUMBER ---------- */
+.why-number {
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.why-item:hover .why-number {
+  transform: translateY(-4px);
+  color: var(--gold-dark);
+}
+
+/* ---------- EXPERIENCE ICON ---------- */
+.experience-icon {
+  transition: transform 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+}
+
+.experience-card:hover .experience-icon {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+/* ---------- TIMELINE MARKER PULSE ---------- */
+.timeline-item .timeline-marker {
+  position: absolute;
+}
+
+.timeline-item.revealed .timeline-marker::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  opacity: 0;
+  animation: timelinePulse 2s ease-out 0.5s;
+}
+
+@keyframes timelinePulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* ---------- ACCORDION ---------- */
+.custom-accordion .accordion-button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-accordion .accordion-collapse {
+  transition: height 0.35s ease;
+}
+
+/* ---------- FILTER BUTTONS ---------- */
+.filter-btn {
+  transition: background-color 0.3s ease, color 0.3s ease,
+              border-color 0.3s ease, transform 0.2s ease;
+}
+
+.filter-btn:active {
+  transform: scale(0.96);
+}
+
+/* ---------- SKIP LINK ---------- */
+.skip-link:focus {
+  animation: fadeInDown 0.3s ease;
+}
+
+/* ---------- LINKS ---------- */
+.footer-links a,
+.card-link,
+.btn-link {
+  transition: color 0.3s ease, padding-left 0.3s ease, gap 0.3s ease;
+}
+
+/* ---------- FLOAT EFFECT ---------- */
+.float-soft {
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+/* ---------- SHIMMER LOADING (for images) ---------- */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--cream-dark) 0%,
+    var(--cream) 50%,
+    var(--cream-dark) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ---------- PULSE DOT ---------- */
+.pulse-dot {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--gold);
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  opacity: 0.6;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+/* ---------- PREFERS REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-slideshow .slide.active .slide-bg {
+    animation: none;
+    transform: scale(1.08);
+  }
+
+  .hero-slideshow .slide.active .slide-kicker,
+  .hero-slideshow .slide.active .slide-title,
+  .hero-slideshow .slide.active .slide-desc,
+  .hero-slideshow .slide.active .slide-actions {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .back-to-top {
+    transition: none;
+  }
+
+  .float-soft {
+    animation: none;
+  }
+
+  .pulse-dot::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  .timeline-item.revealed .timeline-marker::before {
+    animation: none;
+    display: none;
+  }
+
+  .section-kicker::after {
+    transition: none;
+  }
+
+  .btn-gold::before,
+  .btn-outline-gold::before,
+  .btn-outline-light::before {
+    display: none;
+  }
+}

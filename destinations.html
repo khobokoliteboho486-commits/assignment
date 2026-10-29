@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Lesotho destinations — nature, adventure, culture, and heritage sites across the Kingdom in the Sky.">
+  <title>Destinations | Kingdom in the Sky</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar navbar-expand-lg site-navbar scrolled" id="siteNavbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a class="navbar-brand brand" href="index.html" aria-label="Kingdom in the Sky — Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 28L12 10L20 22L26 14L32 28H4Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+            <circle cx="26" cy="8" r="2.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Kingdom in the Sky</span>
+          <span class="brand-tagline">Discover the Beauty of Lesotho</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="destinations.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+          <li class="nav-item"><a class="nav-link" href="accommodation.html">Accommodation</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero" aria-labelledby="dest-hero-heading">
+      <div class="page-hero-bg" style="background-image: url('assets/images/thaba-bosiu.jpg');"></div>
+      <div class="page-hero-overlay"></div>
+      <div class="container page-hero-content">
+        <p class="page-hero-kicker">Explore</p>
+        <h1 class="page-hero-title" id="dest-hero-heading">Destinations</h1>
+        <p class="page-hero-desc">From thundering waterfalls to sacred mountains and snow-capped ski slopes — discover the places that define Lesotho.</p>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb-custom">
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Destinations</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ========== FILTER BAR ========== -->
+    <section class="section filter-section" aria-labelledby="filter-heading">
+      <div class="container">
+        <h2 class="visually-hidden" id="filter-heading">Filter destinations</h2>
+
+        <div class="filter-bar">
+          <div class="filter-search">
+            <label for="destinationSearch" class="visually-hidden">Search destinations</label>
+            <i class="bi bi-search search-icon" aria-hidden="true"></i>
+            <input type="search" id="destinationSearch" class="form-control search-input" placeholder="Search destinations">
+          </div>
+
+          <div class="filter-buttons" role="group" aria-label="Filter by category">
+            <button type="button" class="filter-btn active" data-category="all">All</button>
+            <button type="button" class="filter-btn" data-category="nature">Nature</button>
+            <button type="button" class="filter-btn" data-category="adventure">Adventure</button>
+            <button type="button" class="filter-btn" data-category="culture">Culture</button>
+            <button type="button" class="filter-btn" data-category="heritage">Heritage</button>
+            
+          </div>
+        </div>
+
+        <p class="results-count" id="resultsCount" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ========== DESTINATIONS GRID ========== -->
+    <section class="section destinations-grid-section" aria-labelledby="grid-heading">
+      <div class="container">
+        <h2 class="visually-hidden" id="grid-heading">All destinations</h2>
+
+        <div class="row g-4" id="destinationsGrid">
+
+          <!-- Destination 1 -->
+          <div class="col-md-6 col-lg-4 destination-item" data-category="nature" data-name="maletsunyane falls semonkong waterfall">
+            <article class="destination-card">
+              <div class="card-image-wrap">
+                <img src="assets/images/maletsunyane.jpg" alt="Maletsunyane Falls cascading into a gorge" class="card-image" loading="lazy">
+                <span class="card-badge">Nature</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Maletsunyane Falls</h3>
+                <p class="card-text">A 192-metre single-drop waterfall near Semonkong, one of the highest in Southern Africa. Guided hikes and abseiling available.</p>
+                <button type="button" class="card-link btn-link" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="maletsunyane">
+                  View details <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Destination 2 -->
+          <div class="col-md-6 col-lg-4 destination-item" data-category="adventure" data-name="katse dam highlands water reservoir">
+            <article class="destination-card">
+              <div class="card-image-wrap">
+                <img src="assets/images/katse.jpg" alt="Katse Dam reservoir surrounded by mountains" class="card-image" loading="lazy">
+                <span class="card-badge">Adventure</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Katse Dam</h3>
+                <p class="card-text">Africa's highest dam at 185 metres, set in the Maluti Mountains. Guided tours reveal the engineering behind the water project.</p>
+                <button type="button" class="card-link btn-link" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="katse">
+                  View details <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Destination 3 -->
+          <div class="col-md-6 col-lg-4 destination-item" data-category="adventure" data-name="sani pass drakensberg mountain route">
+            <article class="destination-card">
+              <div class="card-image-wrap">
+                <img src="assets/images/sani-pass.jpg" alt="Sani Pass winding mountain road" class="card-image" loading="lazy">
+                <span class="card-badge">Adventure</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Sani Pass</h3>
+                <p class="card-text">A legendary mountain pass climbing over 1,300 metres through the Drakensberg escarpment into Lesotho. 4x4 required.</p>
+                <button type="button" class="card-link btn-link" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="sani">
+                  View details <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Destination 4 -->
+          <div class="col-md-6 col-lg-4 destination-item" data-category="nature heritage" data-name="sehlabathebe national park unesco wilderness">
+            <article class="destination-card">
+              <div class="card-image-wrap">
+                <img src="assets/images/sehlabathebe.jpg" alt="Sehlabathebe National Park wilderness" class="card-image" loading="lazy">
+                <span class="card-badge">Nature</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Sehlabathebe National Park</h3>
+                <p class="card-text">Lesotho's oldest protected area and a UNESCO World Heritage Site, home to rare Afro-Alpine species and ancient rock art.</p>
+                <button type="button" class="card-link btn-link" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="sehlabathebe">
+                  View details <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Destination 5 -->
+          <div class="col-md-6 col-lg-4 destination-item" data-category="heritage culture" data-name="thaba bosiu moshoeshoe mountain fortress">
+            <article class="destination-card">
+              <div class="card-image-wrap">
+                <img src="assets/images/thaba-bosiu.jpg" alt="Thaba Bosiu mountain plateau at dusk" class="card-image" loading="lazy">
+                <span class="card-badge">Heritage</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Thaba Bosiu</h3>
+                <p class="card-text">The sacred mountain fortress of King Moshoeshoe I — the birthplace of the Basotho nation and a national monument.</p>
+                <button type="button" class="card-link btn-link" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="thababosiu">
+                  View details <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Destination 6 -->
+          <div class="col-md-6 col-lg-4 destination-item" data-category="adventure nature" data-name="afriski mountain resort skiing snow">
+            <article class="destination-card">
+              <div class="card-image-wrap">
+                <img src="assets/images/afriski.jpg" alt="Afriski Mountain Resort ski slopes" class="card-image" loading="lazy">
+                <span class="card-badge">Adventure</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Afriski Mountain Resort</h3>
+                <p class="card-text">Ski and snowboard at 3,222 metres in winter, or hike and mountain bike through the Maluti Mountains in summer.</p>
+                <button type="button" class="card-link btn-link" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="afriski">
+                  View details <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Destination 7 -->
+          <div class="col-md-6 col-lg-4 destination-item" data-category="culture heritage" data-name="morija museum mission history">
+            <article class="destination-card">
+              <div class="card-image-wrap">
+                <img src="assets/images/morija.jpg" alt="Historic Morija mission buildings" class="card-image" loading="lazy">
+                <span class="card-badge">Culture</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Morija</h3>
+                <p class="card-text">Lesotho's historic mission town, home to the Morija Museum & Archives and the country's oldest church, founded in 1833.</p>
+                <button type="button" class="card-link btn-link" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="morija">
+                  View details <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Destination 8 -->
+          <div class="col-md-6 col-lg-4 destination-item" data-category="nature adventure" data-name="ts'ehlanyane national park hiking maluti">
+            <article class="destination-card">
+              <div class="card-image-wrap">
+                <img src="assets/images/tsehlanyane.jpg" alt="Ts'ehlanyane National Park forest and mountains" class="card-image" loading="lazy">
+                <span class="card-badge">Nature</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Ts'ehlanyane National Park</h3>
+                <p class="card-text">Lesotho's largest national park, protecting rare indigenous woodland, crystal-clear streams, and hiking trails in the Maluti foothills.</p>
+                <button type="button" class="card-link btn-link" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="tsehlanyane">
+                  View details <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Destination 9 -->
+          <div class="col-md-6 col-lg-4 destination-item" data-category="culture" data-name="maseru capital city market">
+            <article class="destination-card">
+              <div class="card-image-wrap">
+                <img src="assets/images/maseru.jpeg" alt="Maseru city street scene" class="card-image" loading="lazy">
+                <span class="card-badge">Culture</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Maseru</h3>
+                <p class="card-text">Lesotho's capital and largest city, with lively markets, craft shops, and a gateway position on the Caledon River.</p>
+                <button type="button" class="card-link btn-link" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="maseru">
+                  View details <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Empty results -->
+        <div class="empty-state" id="emptyState" hidden>
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <h3>No destinations found</h3>
+          <p>Try a different search term or reset the category filters.</p>
+          <button type="button" class="btn btn-gold" id="emptyResetBtn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TRAVEL INFO ACCORDION ========== -->
+    <section class="section section-alt" aria-labelledby="travel-info-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Before You Go</p>
+          <h2 class="section-title" id="travel-info-heading">Travel Information</h2>
+          <p class="section-subtitle">Practical notes for planning a visit. Please verify current requirements with official sources before travelling.</p>
+        </div>
+
+        <div class="accordion custom-accordion" id="travelAccordion">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Getting to Lesotho
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#travelAccordion">
+              <div class="accordion-body">
+                Lesotho is reachable by road from South Africa, with border crossings at Maseru Bridge, Maputsoe, Caledonspoort, Van Roosens Nek, and Qacha's Nek. The mountain kingdom also has an international airport at Moshoeshoe I International Airport near Maseru. Check current entry requirements before travelling.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Best Time to Visit
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#travelAccordion">
+              <div class="accordion-body">
+                Lesotho has distinct seasons. Summer (November–February) brings warm days and afternoon thunderstorms. Autumn (March–May) offers clear skies and golden highland grasses. Winter (June–August) brings snow to the high peaks and ski season at Afriski. Spring (September–October) is wildflower season. Each season has its own appeal — check local forecasts and pack accordingly.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Altitude & Health
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#travelAccordion">
+              <div class="accordion-body">
+                Much of Lesotho lies above 2,000 metres, and passes such as Sani reach over 2,800 metres. Some travellers may feel the effects of altitude. Take your time, stay hydrated, and allow a day or two to acclimatise before strenuous hikes. Consult a travel health professional before your trip.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Money & Currency
+              </button>
+            </h3>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#travelAccordion">
+              <div class="accordion-body">
+                The currency is the Loti (plural Maloti), which is pegged 1:1 to the South African Rand. Rand is widely accepted. ATMs are available in Maseru and larger towns, but rural areas may be cash-only. Carry sufficient cash for mountain journeys and inform your bank before travelling.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="section cta-section" aria-labelledby="dest-cta-heading">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2 class="cta-title" id="dest-cta-heading">Have a Destination in Mind?</h2>
+          <p class="cta-text">Send us a travel enquiry and we'll help you plan the perfect Lesotho itinerary.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-gold btn-lg">Send an Enquiry</a>
+            <a href="experiences.html" class="btn btn-outline-light btn-lg">Explore Experiences</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== DESTINATION DETAILS MODAL ========== -->
+  <div class="modal fade destination-modal" id="destinationModal" tabindex="-1" aria-labelledby="destinationModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="destinationModalTitle">Destination</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalImage" src="" alt="" class="modal-hero-img">
+          <span class="modal-badge" id="modalBadge">Nature</span>
+          <p class="modal-description" id="modalDescription"></p>
+          <div class="modal-info-grid">
+            <div>
+              <h3>Location</h3>
+              <p id="modalLocation"></p>
+            </div>
+            <div>
+              <h3>Best For</h3>
+              <p id="modalBestFor"></p>
+            </div>
+            <div>
+              <h3>Access</h3>
+              <p id="modalAccess"></p>
+            </div>
+            <div>
+              <h3>Highlights</h3>
+              <p id="modalHighlights"></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-gold" data-bs-dismiss="modal">Close</button>
+          <a href="contact.html" class="btn btn-gold">Enquire About This Destination</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <a class="footer-brand" href="index.html">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 28L12 10L20 22L26 14L32 28H4Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              <circle cx="26" cy="8" r="2.5" fill="currentColor"/>
+            </svg>
+            <span>Kingdom in the Sky</span>
+          </a>
+          <p class="footer-desc">Discover the Beauty of Lesotho. A premium travel guide to Southern Africa's mountain kingdom.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Lesotho</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="accommodation.html">Accommodation</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Plan</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Travel Enquiry</a></li>
+            <li><a href="about.html">Responsible Tourism</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <address class="footer-contact">
+            <p><i class="bi bi-geo-alt" aria-hidden="true"></i> Maseru, Lesotho</p>
+            <p><i class="bi bi-envelope" aria-hidden="true"></i> liteboho@kingdominthesky.com</p>
+            <p><i class="bi bi-telephone" aria-hidden="true"></i> +266 63422093</p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="footerYear"></span> Kingdom in the Sky. Educational demonstration project. Not an official tourism authority.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/destinations.js"></script>
+</body>
+</html>
